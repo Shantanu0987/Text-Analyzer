@@ -10,9 +10,14 @@ export default function Navbar(props) {
       <a className="navbar-brand" href="#">{props.title}
       </a>
       <div className="form-check form-switch my-2 mx-2">
-  <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+  <input className="form-check-input" onClick={()=>{props.toggleMode(null)}} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
   <label className={`form-check-label text-${props.mode === 'light'?'dark':'light'}` } htmlFor="flexSwitchCheckDefault" onClick={props.toggle}>Enable Dark/Light mode</label>
 </div>
+<div className="bg-primary rounded mx-2" onClick={()=>{props.toggleMode("primary")}} style={{height:"20px",width:'20px'}}></div>
+<div className="bg-danger rounded mx-2" onClick={()=>{props.toggleMode("danger")}} style={{height:"20px",width:'20px'}}></div>
+<div className="bg-success rounded mx-2" onClick={()=>{props.toggleMode("success")}} style={{height:"20px",width:'20px'}}></div>
+<div className="bg-warning rounded mx-2" onClick={()=>{props.toggleMode("warning")}} style={{height:"20px",width:'20px'}}></div>
+
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
