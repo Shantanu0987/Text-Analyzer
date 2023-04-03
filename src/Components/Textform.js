@@ -49,11 +49,11 @@ const [text, setText] = useState("")
   <textarea className="form-control" value={text} onChange={handleOnChange}id="mybox" rows="8"></textarea>
 </div>
 
-<button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
-<button className="btn btn-info mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
-<button className="btn btn-secondary mx-2" onClick={clear}>Clear text</button>
-<button className="btn btn-success my-2" id='myBox' onClick={handleCopy}>Copy text</button>
-<button className="btn btn-warning mx-2 my-2" id='Box' onClick={ExtraSpaces}> Remove Extra spaces</button>
+<button  disabled = {text.length ===0}className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
+<button  disabled = {text.length ===0}className="btn btn-info mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
+<button  disabled = {text.length ===0}className="btn btn-secondary mx-2" onClick={clear}>Clear text</button>
+<button disabled = {text.length ===0} className="btn btn-success my-2" id='myBox' onClick={handleCopy}>Copy text</button>
+<button disabled = {text.length ===0} className="btn btn-warning mx-2 my-2" id='Box' onClick={ExtraSpaces}> Remove Extra spaces</button>n>
 
     </div>
 
@@ -62,7 +62,7 @@ const [text, setText] = useState("")
     <p>{text.trim() === '' ? 0 : text.match(/\S+/g).length} words and {text.replace(/\s+/g, '').length} characters </p>
     <p>{text.trim() === '' ? 0 : text.match(/\S+/g).length * 0.008} Minutes read</p>
     <h2>Preview</h2>
-    <p>{text.length> 0 ? text :'Enter something above the textbox to preveiw here'}</p>
+    <p>{text.length> 0 ? text :'Nothing to preview'}</p>
     </div>
     </div>
     </>
